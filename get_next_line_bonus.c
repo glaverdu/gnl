@@ -35,30 +35,8 @@ int	get_next_line(int fd, char **line)
 	}
 	free(buf);
 	*line = cpystatic(str[fd]);
-	printf("%s\n", *line);
 	str[fd] = cpyend(str[fd]);
 	if (ret == 0)
 		return (0);
 	return (1);
-}
-
-int main()
-{
-	int fd;
-	int fd1;
-	int fd2;
-	char *line;
-	line = malloc(sizeof(char*) * 100);
-	fd = open("42", O_RDWR);
-	fd1 = open("43", O_RDWR);
-	fd2 = open("44", O_RDWR);
-	get_next_line(fd, &line);
-	get_next_line(fd1, &line);
-	get_next_line(fd2, &line);
-	get_next_line(fd, &line);
-	get_next_line(fd1, &line);
-	get_next_line(fd2, &line);
-	get_next_line(fd, &line);
-	get_next_line(fd1, &line);
-	get_next_line(fd2, &line);
 }

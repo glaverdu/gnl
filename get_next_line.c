@@ -40,22 +40,3 @@ int	get_next_line(int fd, char **line)
 		return (0);
 	return (1);
 }
-
-int main()
-{
-	int fd;
-	char *line;
-	line = malloc(sizeof(char*) * 100);
-	fd = open("42", O_RDWR);
-	get_next_line(fd, &line);
-	free(line);
-	get_next_line(fd, &line);
-	free(line);
-	get_next_line(fd, &line);
-	free(line);
-	get_next_line(fd, &line);
-	free(line);
-	get_next_line(fd, &line);
-	get_next_line(fd, &line);
-	while(1){;}
-}
