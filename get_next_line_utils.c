@@ -84,6 +84,11 @@ char	*cpyend(char *str)
 		i++;
 	if (str[i] == '\n')
 		i++;
+	if (str[i] == '\0')
+	{
+		free(str);
+		return (NULL);
+	}
 	k = i;
 	while (str[k])
 		k++;
@@ -91,11 +96,7 @@ char	*cpyend(char *str)
 		return (NULL);
 	k = 0;
 	while (str[i])
-	{
-		strm[k] = str[i];
-		i++;
-		k++;
-	}
+		strm[k++] = str[i++];
 	free(str);
 	strm[k] = '\0';
 	return (strm);
